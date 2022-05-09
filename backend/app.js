@@ -13,6 +13,9 @@ const username = process.env.MONGO_USERNAME || 'saurabh10';
 const password = process.env.MONGO_PASSWORD || 'MONGODB';
 const database = "FULLSTACKTASK";
 
+app.use(bodyparser.json());
+
+
 
 const connectionLink = `mongodb+srv://${username}:${password}@cluster0.qvteq.mongodb.net/${database}?retryWrites=true&w=majority`;
 

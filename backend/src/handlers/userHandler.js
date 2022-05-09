@@ -7,7 +7,8 @@ const SaveUserDetail = (req,res)=>{
         email: req.body.email, 
         password: req.body.password,
     }
-
+//   console.log("req",req.body);
+//   res.send('success');  // double send asel tr issue yeil
     userService.SaveUserDetail(User,function (err,arg){
         if(err){
             res.status(409).send("E11000 duplicate key error collection");
