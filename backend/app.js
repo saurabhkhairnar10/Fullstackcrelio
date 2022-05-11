@@ -6,6 +6,7 @@ const bodyparser = require('body-parser');
 
 const userroute = require('./src/routes/userRoute');
 const authenticationRoute = require('./src/routes/authenticationRoute');
+const issueroute = require('./src/routes/issueRoute');
 
 
 
@@ -35,6 +36,7 @@ app.use('/datafetch', function(req, res, next) {
 
 app.use('/users',userroute);
 app.use('/auth', authenticationRoute);
+app.use('/issues',issueroute);
     
 app.listen(5000,()=>{
     console.log(`server is running on port 5000`);
