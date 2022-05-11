@@ -1,39 +1,41 @@
 const issueService = require('../service/issueService');
+const axios = require('axios').default;
 
-const axios = require('axios');
-// const {got} = require("got");
 
-const SaveIssueDetail = async(req, res)=>{
-    console.log('Inside Function')
-    const res1 = await axios.get('https://api.github.com/repos/pallets/click/issues?state=closed')
-
-// const res2 = await res1.json();
-        console.log("--resp",res1);
-        // res.json({
-        //     "resp" : JSON.stringify(resp)
-        // });
-    //     const {resp} = await got.get('https://api.github.com/repos/pallets/click/issues?state=closed').json();
-
-    // console.log(resp,"resp")
-
+const SaveIssueDetail = async(req,res)=>{
+    // console.log('Inside Function');
+    const res1 = await axios.get('https://api.github.com/repos/pallets/click/issues?state=closed');
     
- const Issue = {   
-        created_at : res1.created_at,
-        id : res1.id,
-        state : res1.state,
-        closed_at : res1.closed_at,
-        number : res1.number,
-        url : res1.url,
-        repository_url : res1.repository_url,
-        labels_url : res1.labels_url
-}
-issueService.SaveIssueDetail(Issue,function (err,arg){
+    const githubIssues = Object.entries(res1.data).map((oup,ind)=>{
+        const [_, issue] = oup;
+        // console.log(issue.repository_url);
+        const Issues = {   
+            created_at : issue.created_at,
+            id : issue.id,  
+            state : issue.state,
+            closed_at : issue.closed_at,
+            number : issue.number,
+            url : issue.url,
+            repository_url : issue.repository_url,
+            labels_url : issue.labels_url,
+            assignee : issue.assignee
+    }
+
+        return Issues;
+
+    });
+    console.log(githubIssues);
+    // console.log("--resp",typeof(res1));
+
+// res.status(200).send(githubIssues);
+issueService.SaveIssueDetail(githubIssues,function (err,arg){
     if(err){
-        res.status(409).send("E11000 duplicate key error collection");
+        // res.status(409).send("E11000 duplicate key error collection");
+        res.status(200).send(githubIssues);
     }else{
         res.status(200).send(arg);
     }
-    console.log("--arg",Issue)
+    console.log("--arg",githubIssues);
 })
 }
 

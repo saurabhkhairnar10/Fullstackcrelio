@@ -9,7 +9,6 @@ const authenticationRoute = require('./src/routes/authenticationRoute');
 const issueroute = require('./src/routes/issueRoute');
 
 
-
 const username = process.env.MONGO_USERNAME || 'saurabh10';
 const password = process.env.MONGO_PASSWORD || 'MONGODB';
 const database = "FULLSTACKTASK";
@@ -38,8 +37,8 @@ app.use('/users',userroute);
 app.use('/auth', authenticationRoute);
 app.use('/issues',issueroute);
     
-app.listen(5000,()=>{
-    console.log(`server is running on port 5000`);
+app.listen(6000,()=>{
+    console.log(`server is running on port 6000`);
 })
 module.exports=app;
 // const middleware = (req,res,next)=>{

@@ -1,5 +1,3 @@
-const jwt = require('jsonwebtoken');
-const SECRETKEY = 'AUTHENTICATION_KEY';
 
 const IssueAccessor = require('../accessor/issueAccessor');
 
