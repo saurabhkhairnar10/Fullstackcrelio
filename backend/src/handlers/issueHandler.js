@@ -24,18 +24,19 @@ const SaveIssueDetail = async(req,res)=>{
         return Issues;
 
     });
-    console.log(githubIssues);
+    // console.log(githubIssues);
     // console.log("--resp",typeof(res1));
 
 // res.status(200).send(githubIssues);
 issueService.SaveIssueDetail(githubIssues,function (err,arg){
+    // console.log("saveissuedet",githubIssues);
     if(err){
         // res.status(409).send("E11000 duplicate key error collection");
         res.status(200).send(githubIssues);
     }else{
         res.status(200).send(arg);
     }
-    console.log("--arg",githubIssues);
+    // console.log("--arg",githubIssues);
 })
 }
 

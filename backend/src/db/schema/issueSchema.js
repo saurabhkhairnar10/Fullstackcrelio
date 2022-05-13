@@ -1,11 +1,14 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+const arraySchema = new Schema({
+    rk : { type : Array , "default" : [] }
+})
 const IssueSchema = new Schema({
-    created_at: Number,
+    created_at: String,
     id : Number,
     state : String,
-    closed_at : Number,
+    closed_at : String,
     number : Number,
     url : String,
     repository_url : String,
@@ -29,5 +32,6 @@ const AssigneesSchema = new Schema({
 module.exports={
     IssueSchema,
     LabelsSchema,
-    AssigneesSchema
+    AssigneesSchema,
+    arraySchema
 };
