@@ -8,8 +8,8 @@ import Issues from './Components/Issues';
 function App() {
   return (
     <div className="App">
-      {/* <Issues></Issues> */}
-      <Main></Main>
+      <Issues></Issues>
+      {/* <Main></Main> */}
       {/* <HomeScreen></HomeScreen> */}
     </div>
   );

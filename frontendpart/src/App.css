@@ -3,6 +3,19 @@
 }
 .marginClass{
   margin: 1rem;
+  display: grid;
+}
+
+.cssClass{
+    display: grid;
+    gap: 1rem 1rem;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.bgColor{
+  background-color: plum;
 }
 
 .App-logo {
