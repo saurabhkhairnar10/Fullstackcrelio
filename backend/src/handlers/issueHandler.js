@@ -4,7 +4,7 @@ const axios = require('axios').default;
 
 const SaveIssueDetail = async(req,res)=>{
     // console.log('Inside Function');
-    const res1 = await axios.get('https://api.github.com/repos/pallets/click/issues?state=closed');
+    const res1 = await axios.get('https://api.github.com/repos/pallets/click/issues?state=all');
     
     const githubIssues = Object.entries(res1.data).map((oup,ind)=>{
         const [_, issue] = oup;

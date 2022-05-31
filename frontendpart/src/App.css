@@ -6,16 +6,73 @@
   display: grid;
 }
 
-.cssClass{
+.position{
+  display: flex;
+  justify-content: space-between;
+}
+
+.issueheader{
+  margin-left: 35rem;
+  margin-top: 5px;
+}
+
+.dropdown{
+  margin-top: 2px;
+  margin-right: 1rem;
+}
+
+.box{
+  display: flex;
+  justify-content: space-between;
+  border:2px solid gray;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 8px;
+}
+
+.box:hover{
+  background: rgb(241, 235, 235);
+}
+
+.right{
+  margin-right: 0.5rem;
+}
+
+.left{
+  margin-left: 0.5rem;
+}
+
+.title{
+  text-decoration-line: none;
+  color:black;
+}
+
+.style1{
+  display: flex;
+  justify-content: start;
+}
+
+.style2{
+  display: flex;
+  justify-content: start;
+}
+
+
+
+/* .cssClass{
     display: grid;
     gap: 1rem 1rem;
     grid-template-columns: auto auto auto;
     background-color: #2196F3;
     padding: 10px;
-}
+} */
 
 .bgColor{
   background-color: plum;
+}
+
+.space{
+  margin: 2px;
 }
 
 .App-logo {
@@ -51,4 +108,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.dropdownmr{
+  margin-right: 63px;
+}
+
+.marginlcol1{
+  margin-left: -20px;
+}
+
+.marginlcol9{
+  margin-left: -20px;
+}
+
+.marginlcol2{
+  margin-left: 30px;
+}
+
+.plcol1{
+  padding-left: 7px;
+}
+
+.mlopen{
+  margin-left: 20px;
+}
+.mlclosed{
+  margin-left: 15px;
+}
+.hovercol1:hover{
+  color: blue;
+}
+
+.bghover:hover{
+  background: rgb(105, 105, 105);
 }
